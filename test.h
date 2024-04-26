@@ -1,22 +1,21 @@
 #pragma once
-#include "..\engine\HLAengine.h"
-#include<iostream>
+#include <iostream>
 
+#include "HLAengine.h"
 
-class test :public Component {
-	
-	DECLARE_CLASS
+class test : public Component {
+    DECLARE_CLASS
 
 public:
-	test(){}
-	~test(){}
-	static void classInit();
-	virtual void init() {};
-	virtual void tick() override;
-	virtual void simulation() override;
+    test() {}
+    ~test() {}
+    static void classInit();
+    virtual void init(){};
+    virtual void tick() override;
+    virtual void simulation() override;
+
 public:
-	int index;
-	vector<int> v;
-	int count;
+    int index;
+    vector<int> v;
+    int count;
 };
-

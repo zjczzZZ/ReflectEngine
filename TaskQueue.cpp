@@ -9,7 +9,7 @@ void TaskQueue::addTask(Task task) {
     m_taskQ.push(task);
 }
 
-Task& TaskQueue::takeTask() {
+Task TaskQueue::takeTask() {
     Task t;
     std::unique_lock<mutex> ulk(m_mutex);
     if (!m_taskQ.empty()) {

@@ -8,12 +8,10 @@ using callback = void (*)(void* arg);
 
 struct Task {
     Task()
-        : function(nullptr)
-        , arg(nullptr) {}
+        : function(nullptr), arg(nullptr) {}
 
     Task(callback f, void* arg)
-        : function(f)
-        , arg(arg) {}
+        : function(f), arg(arg) {}
 
     callback function;
     void* arg;
@@ -32,9 +30,9 @@ public:
     void addTask(Task task);
     void addTask(callback f, void* arg);
     // 取出一个任务
-    Task &takeTask();
+    Task takeTask();
 
-    //获取当前任务个数
+    // 获取当前任务个数
     inline size_t taskNumber() {
         return m_taskQ.size();
     }
